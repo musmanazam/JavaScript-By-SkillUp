@@ -1,0 +1,87 @@
+<html>
+  <head>JavaScript Arrays</head>
+  <body>
+    <p id="demo"></p>
+  </body>
+  <script>
+                                              // Array Operations
+
+    let cars= ["bmw", "volvo", "Sonata", "honda"]
+    document.getElementById("demo").innerHTML = cars;
+
+    // Access an array element
+    let bmw = cars[0];
+    document.getElementById("demo").innerHTML=bmw;
+    
+    // Array lenght property to show the length of an aray
+    let len = cars.length;
+    document.getElementById("demo").innerHTML=len;
+
+    // Access the last array element
+    let last = cars[cars.length-1];
+    document.getElementById("demo").innerHTML=last;
+
+    // Loop over an array item
+    cars.forEach((item, index, array)=> {console.log(item, index);});
+
+                                                  // Array Methods
+    // toString method for convert array to string
+    document.getElementById("demo").innerHTML = cars.toString();
+    
+    // Pop remove the last element from an array
+    let last1 = cars.pop();
+    document.getElementById("demo").innerHTML = last1;
+    let last2 = cars[cars.length-1];
+    console.log(last2);
+
+    // Push add to new element to the end of an array
+    cars.push("Audi");
+    document.getElementById("demo").innerHTML = cars;
+
+    //Shift remove the first element from the array
+    cars.shift();
+    document.getElementById("demo").innerHTML= cars;
+
+    //Un-shift add the element at the beggining of an array
+    cars.unshift("Hyundai");
+    document.getElementById("demo").innerHTML = cars;
+
+    // Concate for connecting two arrays
+    let bikes = ["Yamaha", "Honda", "Suzukai", "Royal"]
+    let vehicales = cars.concat(bikes);
+    document.getElementById("demo").innerHTML = vehicales;
+
+    // Sort in the ascending order
+    vehicales.sort();
+    document.getElementById("demo").innerHTML = vehicales;
+    
+    // Reverse method use to revers the array element
+    vehicales.reverse();
+    document.getElementById("demo").innerHTML = vehicales;
+
+
+                                                    // Map , reduc & filter
+
+    // Maps Method
+    let num1 = [1,2,3,4,5,6,7];
+    let num2 = num1.map(multiply);
+    function multiply(value){
+      return value * 2;
+    }
+    document.getElementById("demo").innerHTML = num2;
+
+    // Filter Method
+    let num3 = num1.filter(comp);
+    function comp(value){
+      return value>4;
+    }
+    document.getElementById("demo").innerHTML = num3;
+
+    //Reduce Mehtod
+    let num4 = num1.reduce(sum);
+    function sum(total, value){
+      return total + value;
+    }
+    document.getElementById("demo").innerHTML = num4;
+  </script>
+</html>

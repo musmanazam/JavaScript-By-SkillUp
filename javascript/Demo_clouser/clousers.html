@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Clousers Object</title>
+    <p id="demo"></p>
+  </head>
+  <body>
+    <!-- <script>
+      let a= 10;
+      function My_function(){
+        let b= 5;
+        document.write(a+b);
+      }
+      My_function();
+    </script> -->
+
+    <script>
+    var a = 10;
+    function First_func(){
+      var b= 15;
+      function Second_func(){
+        var c = 5 +a + b;
+        return c;
+      }
+      return Second_func()
+    }
+    var sum = First_func()
+    document.write("The sum of " + sum);
+
+    </script>
+  </body>
+</html>

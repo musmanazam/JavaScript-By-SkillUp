@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Promises in JavaScript</title>
+    <p id="demo"></p>
+  </head>
+  <body>
+    <script>
+      // How promises works. id the fuel-tank is true, it resolved otherwise it will be reject
+//  let car = new Promise(function(resolve, eject){
+//   fuel_tank = true;
+//   if(fuel_tank)
+//   resolve()
+// else
+// reject()
+//  })
+//  car.then(function(){
+//   document.write("the tank is full, Happy driving")
+//  }).catch(function(){
+//   document.write("the tank is empty")
+//  })
+
+//Nested promises
+
+let empty_tank = function(){
+  return new Promise(function(resolve, reject){
+    resolve(" the car does not have enough fuel")
+  })
+}
+let enign = function(msg){
+  return new Promise(function(resolve, reject){
+    resolve(msg + " the engine is over heating")
+  })
+}
+let travel = function(msg){
+  return new Promise(function(resolve, reject){
+    resolve(msg + " the car is not safe for travelling")
+  })
+}
+
+empty_tank().then(function(result){
+return enign(result)
+}).then(function(result){
+  return travel(result)
+}).then(function(result){
+  document.write(" Done!" + result)
+})
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Object Methods</title>
+  </head>
+  <body>
+    <h1>Object Methods in JavaScript</h1>
+    <p id="demo"></p>
+    <button id="button">Click me</button>
+    <script>
+      let user ={
+        name: 'usman',
+        age : 29,
+      };
+      function fun(){
+        alert("Hello !")
+      }
+      user.message = fun;
+      document.getElementById("demo").innerHTML = "Hi " + user.name;
+      document.getElementById("button").onclick = user.message;
+    </script>
+  </body>
+</html>

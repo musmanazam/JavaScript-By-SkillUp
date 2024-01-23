@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>JavaScript Accessors</title>
+  </head>
+  <body>
+    <h1>JavaScript Accessors</h1>
+    <p id="demo"></p>
+    <script>
+      //Geter method
+      var car = {
+        name:"volvo",
+        model: "BMW 2020",
+        fuel_type:"diesel",
+        get fuel(){
+          return this.fuel_type;
+        },
+      };
+      document.getElementById("demo").innerHTML = car.fuel;
+    </script>
+
+    <script>
+      // Seter method
+      var car = {
+        name: "volvo",
+        color: 'gray',
+        fuel_type: '',
+        set fuel(fuel){
+          this.fuel_type = fuel;
+        }
+      }
+      car.fuel = "petrol";
+      document.getElementById("demo").innerHTML = car.fuel_type;
+    </script>
+  </body>
+</html>

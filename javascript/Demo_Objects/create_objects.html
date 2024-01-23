@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>JavaScript Objects</title>
+  </head>
+  <body>
+    <h1>Creating JavasScripts Objects</h1>
+    <p id="demo"></p>
+    <script>
+      //1st method It is the simple way to creating a javascript object
+      var student ={
+        name: 'usman',
+        age: 29,
+        studies: "Software Engr"
+      }
+      document.getElementById("demo").innerHTML = student.name + " of the age of " + student.age + " studies in " + student.studies;
+    </script>
+
+<script>
+//2nd method Another way to creating javascript object
+var student = new Object();
+student.name = "usman Azam",
+student.age = 30,
+student.studies = "Computer Sceience"
+document.getElementById("demo").innerHTML = student.name + " of the age " + student.age + " studies " + student.studies;
+</script>  
+
+<script>
+  // 3rd method a java script constructor object
+  function stud(name, age, studies){
+    this.name = name;
+    this.age = age;
+    this.studies = studies;
+  }
+  var student = stud("usman", 28, "Software engineering");
+  document.getElementById("demo").innerHTML = student.name + " of the age of " + student.age + " studies " + student.studies;
+</script>
+</body>
+</html>

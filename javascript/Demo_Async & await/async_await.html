@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Async and Await Function</title>
+  </head>
+  <body>
+    <script>
+      let result = function(score){
+        return new Promise(function(resolve, reject){
+          document.write(" Calculation result... ")
+          if(score>50)
+          resolve(" Congratulation! You have passed ")
+        else
+        reject(" You have failed ")
+        })
+      }
+
+      let grade = function(Response){
+        return new Promise(function(resolve, reject){
+          document.write(" Calculating your grades...")
+          resolve(" Your grade is A " + Response)
+        })
+      }
+
+      // result(80).then(Response=>{
+      //   document.write(" Result received ")
+      //   return grade(Response)
+      // }).then(finalgrade=>{
+      //   document.write(finalgrade)
+      // }).catch(err=>{
+      //   document.write(err)
+      // })
+
+      // async and await fucntion works as below
+      async function calculateresult(){
+        try{
+        const Response = await result(80)
+        document.write("Received Result")
+        const finalgrade = await grade(Response)
+        document.write(finalgrade)
+      }
+      catch(err){
+        document.write(err)
+      }
+    }
+    calculateresult();
+    </script>
+  </body>
+</html>

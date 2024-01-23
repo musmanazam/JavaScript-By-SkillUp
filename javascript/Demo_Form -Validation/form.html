@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Form Validation</title>
+    <script>
+      function Validate(){
+        if(document.myForm.Email.value==""){
+          alert("please provide your Email!")
+          document.myForm.Email.focus()
+          return false
+        }else if(document.myForm.Password.value==""){
+          alert("Please provide valid password")
+          document.myForm.Password.focus()
+          return false
+        }
+        else{
+          return true
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="message.html" name="myForm" onSubmit="return(Validate())">
+      <input name= Email placeholder="Email" type="text"><br>
+      <input name= Password placeholder="Password" type="text"><br>
+      <button type="submit">Submit</button>
+        </form>
+  </body>
+</html>

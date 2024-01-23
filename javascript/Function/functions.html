@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>JavaScript Function</title>
+  </head>
+  <bosy>
+    <h1>Functions</h1>
+    <p id="demo"></p>
+    <script>
+      function My_function(val){
+        document.getElementById("demo").innerHTML = val * val;
+      }
+      My_function(5)
+    </script>
+
+    <script>
+      //Function expression
+      let x =function(){
+        alert("Hello !")
+      }
+      document.getElementById("demo").innerHTML = x();
+    </script>
+
+    <script>
+      //Function Contructor
+      var Myfunction = new Function("a", "b", "return a+b")
+      var y = Myfunction(2,3);
+      document.getElementById("demo").innerHTML = y
+    </script>
+
+    <script>
+      //self invoking function
+      (function(){
+        alert("hello! welcome")
+      })()
+    </script>
+
+    <script>
+      //Functions as values
+      function Product(a,b){
+        return a*b;
+      }
+      let d = Product(2,5);
+      document.getElementById("demo").innerHTML = "The Product is " + d;
+    </script>
+
+    <script>
+      // Functions as Objects
+      var body = "return Math.PI *rad *rad"
+      var circle = new Function("rad", body);
+      alert(circle(5));
+    </script>
+
+    <script>
+      // Arrow functions
+      const Myfunc =(a,b,c)=>{
+        return a*b*c
+      }
+      let z = Myfunc(2,3,4);
+      document.getElementById("demo").innerHTML = "The product of three digits are " + z
+    </script>
+
+    <script>
+      // Generatoe Function
+      function* generatefunc(){
+        yield 1;
+        yield 2;
+        yield 3;
+      }
+      let generator = generatefunc();
+      let one = generator.next();
+      let two = generator.next();
+      let three = generator.next();
+
+      alert(JSON.stringify(one));
+      alert(JSON.stringify(two));
+      alert(JSON.stringify(three));
+    </script>
+
+    <script>
+      // Pre defined functions
+      let m = 5;
+      let n = 6;
+      let o = 7;
+      console.log(eval("m+n"));
+      console.log(eval(o));
+      document.getElementById("demo").innerHTML = (eval("m+n"));
+      document.getElementById("demo").innerHTML = (eval(o));
+    </script>
+  </bosy>
+</html>
